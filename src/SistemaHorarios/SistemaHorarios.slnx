@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SistemaHorarios.Datos/SistemaHorarios.Datos.vbproj" />
+  <Project Path="SistemaHorarios.Logica/SistemaHorarios.Logica.vbproj" />
+  <Project Path="SistemaHorarios.UI/SistemaHorarios.UI.vbproj" />
+</Solution>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12E59209-AD1A-4976-9F47-90A506DC1F3A}</ProjectGuid>
+    <ProjectGuid>{1E637B62-CBF7-4989-B7FD-D00F283283A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>SistemaHorarios.Logica</RootNamespace>
     <AssemblyName>SistemaHorarios.Logica</AssemblyName>
@@ -64,7 +64,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="Modelos\Docente.vb" />
+    <Compile Include="Modelos\FranjaHoraria.vb" />
+    <Compile Include="Modelos\Grupo.vb" />
+    <Compile Include="Modelos\Horario.vb" />
+    <Compile Include="Modelos\Materia.vb" />
+    <Compile Include="Modelos\Rol.vb" />
+    <Compile Include="Modelos\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

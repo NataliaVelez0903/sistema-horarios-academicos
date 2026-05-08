@@ -64,12 +64,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\DisponibilidadDocente.vb" />
     <Compile Include="Modelos\Docente.vb" />
+    <Compile Include="Modelos\DocenteMateria.vb" />
     <Compile Include="Modelos\FranjaHoraria.vb" />
     <Compile Include="Modelos\Grupo.vb" />
     <Compile Include="Modelos\Horario.vb" />
     <Compile Include="Modelos\Materia.vb" />
+    <Compile Include="Modelos\MateriaTAPSIObligatoria.vb" />
+    <Compile Include="Modelos\Prerrequisito.vb" />
     <Compile Include="Modelos\Rol.vb" />
+    <Compile Include="Modelos\TipoEstudiante.vb" />
     <Compile Include="Modelos\Usuario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -86,6 +91,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Servicios\ResultadoLogin.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -96,6 +102,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\ConfiguracionHorario.vb" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -105,6 +112,10 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilidades\" />
+    <Folder Include="Validadores\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

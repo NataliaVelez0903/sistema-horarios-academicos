@@ -1,3 +1,13 @@
-﻿Public Class DocenteMateria
+﻿Namespace Modelos
 
-End Class
+    Public Class DocenteMateria
+
+        Public Property Id As Integer
+
+        Public Property Docente As Docente
+
+        Public Property Materia As Materia
+
+    End Class
+
+End Namespace

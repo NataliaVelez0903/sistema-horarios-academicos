@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9086A5A3-C456-40FA-8B91-53E09031A9BC}</ProjectGuid>
+    <ProjectGuid>{EAB1BC54-6D14-42CA-9281-26457D647A00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>SistemaHorarios.Datos</RootNamespace>
     <AssemblyName>SistemaHorarios.Datos</AssemblyName>
@@ -99,6 +99,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaHorarios.Logica\SistemaHorarios.Logica.vbproj">
+      <Project>{1e637b62-cbf7-4989-b7fd-d00f283283a2}</Project>
+      <Name>SistemaHorarios.Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

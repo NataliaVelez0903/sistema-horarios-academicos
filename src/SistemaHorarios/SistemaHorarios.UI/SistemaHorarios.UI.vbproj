@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{584DDD78-7278-440B-A7F6-EA193CA152F6}</ProjectGuid>
+    <ProjectGuid>{D96967B3-29D7-4B5A-A34C-A23B01662660}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>SistemaHorarios.UI.My.MyApplication</StartupObject>
     <RootNamespace>SistemaHorarios.UI</RootNamespace>
@@ -115,6 +115,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaHorarios.Logica\SistemaHorarios.Logica.vbproj">
+      <Project>{1e637b62-cbf7-4989-b7fd-d00f283283a2}</Project>
+      <Name>SistemaHorarios.Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

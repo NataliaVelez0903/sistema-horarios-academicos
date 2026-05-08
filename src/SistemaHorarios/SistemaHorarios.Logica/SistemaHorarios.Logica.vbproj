@@ -73,6 +73,7 @@
     <Compile Include="Modelos\Materia.vb" />
     <Compile Include="Modelos\MateriaTAPSIObligatoria.vb" />
     <Compile Include="Modelos\Prerrequisito.vb" />
+    <Compile Include="Modelos\ResultadoLogin.vb" />
     <Compile Include="Modelos\Rol.vb" />
     <Compile Include="Modelos\TipoEstudiante.vb" />
     <Compile Include="Modelos\Usuario.vb" />
@@ -91,7 +92,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Servicios\ResultadoLogin.vb" />
+    <Compile Include="Servicios\AutenticacionServicio.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

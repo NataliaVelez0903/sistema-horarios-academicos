@@ -1,13 +1,11 @@
-﻿Namespace Modelos
+﻿Public Class ConfiguracionHorario
 
-    Public Class ConfiguracionHorario
+    Public Property Id As Integer
 
-        Public Property Id As Integer
+    Public Property Nombre As String
 
-        Public Property Docente As Docente
+    Public Property EsTAPSI As Boolean
 
-        Public Property Materia As Materia
+    Public Property Jornada As String
 
-    End Class
-
-End Namespace
+End Class

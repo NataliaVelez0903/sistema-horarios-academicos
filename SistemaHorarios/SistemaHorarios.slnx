@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="SistemaHorarios.Datos/SistemaHorarios.Datos.vbproj" />
-  <Project Path="SistemaHorarios.Logica/SistemaHorarios.Logica.vbproj" />
-  <Project Path="SistemaHorarios.UI/SistemaHorarios.UI.vbproj" />
+  <Project Path="SistemaHorarios.Datos/SistemaHorarios.Datos.vbproj" Id="76e812d4-5f4a-4f33-a98f-4ca41c21f7c7" />
+  <Project Path="SistemaHorarios.Logica/SistemaHorarios.Logica.vbproj" Id="9dbe694d-279c-4035-ab77-e9350c398963" />
+  <Project Path="SistemaHorarios.UI/SistemaHorarios.UI.vbproj" Id="43da6a6a-4abe-4c4d-bc5c-c8d0be140335" />
 </Solution>

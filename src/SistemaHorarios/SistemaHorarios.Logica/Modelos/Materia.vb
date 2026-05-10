@@ -1,21 +1,23 @@
-﻿Namespace Modelos
+﻿Public Class Materia
 
-    Public Class Materia
+    Public Property Id As Integer
 
-        Public Property Id As Integer
+    Public Property Codigo As String
 
-        Public Property Codigo As String
+    Public Property Nombre As String
 
-        Public Property Nombre As String
+    Public Property Creditos As Integer
 
-        Public Property Creditos As Integer
+    Public Property IntensidadHoraria As Integer
 
-        Public Property IntensidadHoraria As Integer
+    Public Property SemestreRecomendado As Integer
 
-        Public Property Semestre As Integer
+    Public Property Estado As Boolean
 
-        Public Property Estado As Boolean
+    Public Property AplicaTAPSI As Boolean
 
-    End Class
+    Public Property EsObligatoriaTAPSI As Boolean
 
-End Namespace
+    Public Property TieneComponentePractico As Boolean
+
+End Class

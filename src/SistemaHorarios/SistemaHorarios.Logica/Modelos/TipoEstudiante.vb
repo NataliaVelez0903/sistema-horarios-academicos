@@ -1,3 +1,8 @@
-﻿Public Class TipoEstudiante
+﻿Namespace Modelos
 
-End Class
+    Public Enum TipoEstudiante
+        Regular
+        TAPSI
+    End Enum
+
+End Namespace

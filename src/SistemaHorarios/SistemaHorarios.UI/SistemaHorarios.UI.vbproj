@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D96967B3-29D7-4B5A-A34C-A23B01662660}</ProjectGuid>
+    <ProjectGuid>{584DDD78-7278-440B-A7F6-EA193CA152F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>SistemaHorarios.UI.My.MyApplication</StartupObject>
     <RootNamespace>SistemaHorarios.UI</RootNamespace>
@@ -24,6 +24,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>SistemaHorarios.UI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,17 +74,78 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Controls\CardResumen.Designer.vb">
+      <DependentUpon>CardResumen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardResumen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuUsuario.Designer.vb">
+      <DependentUpon>MenuUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuUsuario.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sidebar.Designer.vb">
+      <DependentUpon>Sidebar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sidebar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TablaPaginada.Designer.vb">
+      <DependentUpon>TablaPaginada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TablaPaginada.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TopBar.Designer.vb">
+      <DependentUpon>TopBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TopBar.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Shared\FrmEditarPerfilDialog.Designer.vb">
+      <DependentUpon>FrmEditarPerfilDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Shared\FrmEditarPerfilDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Dialogs\Shared\FrmCerrarSesionDialog.Designer.vb">
+      <DependentUpon>FrmCerrarSesionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Shared\FrmCerrarSesionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Shared\FrmCambiarContrasenaDialog.Designer.vb">
+      <DependentUpon>FrmCambiarContrasenaDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Shared\FrmCambiarContrasenaDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Shared\UcPerfil.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Shared\UcPerfil.Designer.vb">
+      <DependentUpon>UcPerfil.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shell\FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shell\FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -95,16 +157,57 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="State\UsuarioSesion.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\CardResumen.resx">
+      <DependentUpon>CardResumen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MenuUsuario.resx">
+      <DependentUpon>MenuUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sidebar.resx">
+      <DependentUpon>Sidebar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TablaPaginada.resx">
+      <DependentUpon>TablaPaginada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TopBar.resx">
+      <DependentUpon>TopBar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Shared\FrmEditarPerfilDialog.resx">
+      <DependentUpon>FrmEditarPerfilDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Shared\FrmCerrarSesionDialog.resx">
+      <DependentUpon>FrmCerrarSesionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Shared\FrmCambiarContrasenaDialog.resx">
+      <DependentUpon>FrmCambiarContrasenaDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shell\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Shared\UcPerfil.resx">
+      <DependentUpon>UcPerfil.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dialogs\Coordinadores\.gitkeep" />
+    <None Include="Dialogs\Docentes\.gitkeep" />
+    <None Include="Dialogs\GruposAcademicos\.gitkeep" />
+    <None Include="Dialogs\Horarios\.gitkeep" />
+    <None Include="Dialogs\Materias\.gitkeep" />
+    <None Include="Dialogs\PlanAcademico\.gitkeep" />
+    <None Include="Helpers\.gitkeep" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -115,12 +218,43 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="UserControls\Admin\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SistemaHorarios.Logica\SistemaHorarios.Logica.vbproj">
-      <Project>{1e637b62-cbf7-4989-b7fd-d00f283283a2}</Project>
-      <Name>SistemaHorarios.Logica</Name>
-    </ProjectReference>
+    <Content Include="Resources\Icons\flecha.png" />
+    <Content Include="Resources\Icons\IcAdvertencia.png" />
+    <Content Include="Resources\Icons\IcAgregar.png" />
+    <Content Include="Resources\Icons\IcAgregarBlc.png" />
+    <Content Include="Resources\Icons\IcCambiar.png" />
+    <Content Include="Resources\Icons\IcCambiarContra.png" />
+    <Content Include="Resources\Icons\IcCerrar.png" />
+    <Content Include="Resources\Icons\IcCoordinadores.png" />
+    <Content Include="Resources\Icons\IcCorrecto.png" />
+    <Content Include="Resources\Icons\IcDevuelve.png" />
+    <Content Include="Resources\Icons\IcDocentes.png" />
+    <Content Include="Resources\Icons\IcEditar.png" />
+    <Content Include="Resources\Icons\IcEliminarNg.png" />
+    <Content Include="Resources\Icons\IcEliminarRj.png" />
+    <Content Include="Resources\Icons\IcFacultad.png" />
+    <Content Include="Resources\Icons\IcGrupos.png" />
+    <Content Include="Resources\Icons\IcHistorial.png" />
+    <Content Include="Resources\Icons\IcHorarios.png" />
+    <Content Include="Resources\Icons\IcIniciar.png" />
+    <Content Include="Resources\Icons\IcInicio.png" />
+    <Content Include="Resources\Icons\Iclapiz.png" />
+    <Content Include="Resources\Icons\IcManual.png" />
+    <Content Include="Resources\Icons\IcMaterias.png" />
+    <Content Include="Resources\Icons\IcPlanAca.png" />
+    <Content Include="Resources\Icons\IcReportes.png" />
+    <Content Include="Resources\Icons\IcRol.png" />
+    <Content Include="Resources\Icons\IcTelefono.png" />
+    <Content Include="Resources\Icons\IcUsuario.png" />
+    <Content Include="Resources\Icons\IcUsuarioIn.png" />
+    <Content Include="Resources\Icons\IcX.png" />
+    <Content Include="Resources\Icons\OpcUsua.png" />
+    <Content Include="Resources\Images\ImgAltaC_sin_fondo.png" />
+    <Content Include="Resources\Images\ImgCupula.png" />
+    <Content Include="Resources\Images\LogoU.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

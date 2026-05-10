@@ -4,31 +4,35 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E637B62-CBF7-4989-B7FD-D00F283283A2}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>SistemaHorarios.Logica</RootNamespace>
-    <AssemblyName>SistemaHorarios.Logica</AssemblyName>
+    <ProjectGuid>{6443A451-9EFE-4BBC-9CAE-E21780118BC9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SistemaHorarios.Pruebas.My.MyApplication</StartupObject>
+    <RootNamespace>SistemaHorarios.Pruebas</RootNamespace>
+    <AssemblyName>SistemaHorarios.Pruebas</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SistemaHorarios.Logica.xml</DocumentationFile>
+    <DocumentationFile>SistemaHorarios.Pruebas.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SistemaHorarios.Logica.xml</DocumentationFile>
+    <DocumentationFile>SistemaHorarios.Pruebas.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,6 +50,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,29 +65,26 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelos\DisponibilidadDocente.vb" />
-    <Compile Include="Modelos\Docente.vb" />
-    <Compile Include="Modelos\DocenteMateria.vb" />
-    <Compile Include="Modelos\FranjaHoraria.vb" />
-    <Compile Include="Modelos\Grupo.vb" />
-    <Compile Include="Modelos\Horario.vb" />
-    <Compile Include="Modelos\Materia.vb" />
-    <Compile Include="Modelos\MateriaTAPSIObligatoria.vb" />
-    <Compile Include="Modelos\PrerequisitoMateria.vb" />
-    <Compile Include="Modelos\ResultadoLogin.vb" />
-    <Compile Include="Modelos\Rol.vb" />
-    <Compile Include="Modelos\TipoEstudiante.vb" />
-    <Compile Include="Modelos\Usuario.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -92,36 +96,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Negocio\Docentes\CalcularCargaDocente.vb" />
-    <Compile Include="Negocio\Docentes\GestorDisponibilidad.vb" />
-    <Compile Include="Negocio\Docentes\GestorDocente.vb" />
-    <Compile Include="Negocio\Docentes\ValidadorDocente.vb" />
-    <Compile Include="Negocio\Grupos\GestorGrupo.vb" />
-    <Compile Include="Negocio\Grupos\ValidadorGrupo.vb" />
-    <Compile Include="Negocio\Horarios\AsignadorDocente.vb" />
-    <Compile Include="Negocio\Horarios\AsignadorFranjaHoraria.vb" />
-    <Compile Include="Negocio\Horarios\DetectorConflicto.vb" />
-    <Compile Include="Negocio\Horarios\GeneradorHorario.vb" />
-    <Compile Include="Negocio\Horarios\ValidadorHorario.vb" />
-    <Compile Include="Negocio\Materias\CalculadorCargaAcademica.vb" />
-    <Compile Include="Negocio\Materias\EvaluadorMateriaHabilitada.vb" />
-    <Compile Include="Negocio\Materias\GestorMateria.vb" />
-    <Compile Include="Negocio\Materias\GestorPrerequisitos.vb" />
-    <Compile Include="Negocio\Materias\ReglasMateria.vb" />
-    <Compile Include="Negocio\Materias\ValidadorMateria.vb" />
-    <Compile Include="Negocio\PlanAcademico\GestorPrerequisito.vb" />
-    <Compile Include="Negocio\PlanAcademico\GestorSemestre.vb" />
-    <Compile Include="Negocio\PlanAcademico\ValidadorPlanAcademico.vb" />
-    <Compile Include="Negocio\Reportes\GeneradorReporte.vb" />
-    <Compile Include="Negocio\Reportes\GestorReporte.vb" />
-    <Compile Include="Negocio\Reportes\ValidadorReporte.vb" />
-    <Compile Include="Negocio\Seguridad\GestorRol.vb" />
-    <Compile Include="Negocio\Seguridad\GestorUsuario.vb" />
-    <Compile Include="Negocio\Tapsi\GestorTapsi.vb" />
-    <Compile Include="Pruebas\ModuloPruebas.vb" />
-    <Compile Include="Servicios\AutenticacionServicio.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -130,7 +109,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelos\ConfiguracionHorario.vb" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -140,10 +118,13 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utilidades\" />
-    <Folder Include="Validadores\" />
+    <ProjectReference Include="..\SistemaHorarios.Logica\SistemaHorarios.Logica.vbproj">
+      <Project>{1e637b62-cbf7-4989-b7fd-d00f283283a2}</Project>
+      <Name>SistemaHorarios.Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

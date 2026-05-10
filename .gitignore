@@ -44,20 +44,38 @@ project.lock.json
 project.assets.json
 
 # =========================
-# SQL Server / Local DB
+# Executable / generated files
+# =========================
+
+*.exe
+*.dll
+*.pdb
+*.xml
+
+# =========================
+# Database / Local DB
 # =========================
 
 *.mdf
 *.ldf
+*.sqlite
+*.db
 
 # =========================
-# Publish / Executable output
+# Environment variables
 # =========================
 
-publish/
-*.exe
-*.dll
-*.pdb
+.env
+.env.local
+.env.development
+.env.production
+
+# =========================
+# Docker
+# =========================
+
+mysql_data/
+docker-data/
 
 # =========================
 # Windows
@@ -75,6 +93,3 @@ Desktop.ini
 *.temp
 *.log
 *.cache
-
-# Docker
-mysql_data/

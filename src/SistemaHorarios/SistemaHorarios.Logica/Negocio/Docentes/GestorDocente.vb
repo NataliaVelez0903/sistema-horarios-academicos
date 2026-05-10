@@ -1,138 +1,132 @@
-﻿' Importa el namespace donde se encuentra definida
-' la entidad Docente que será utilizada en esta clase.
+﻿' Importa la entidad Docente.
 Imports SistemaHorarios.Logica.Entidades
+Imports SistemaHorarios.Logica.Modelos
 
-' Namespace encargado de agrupar toda la lógica
+' Namespace encargado de la lógica de negocio
 ' relacionada con la gestión de docentes.
 Namespace Negocio.Docentes
 
-    ' Clase responsable de administrar las operaciones CRUD
-    ' (Crear, Leer, Actualizar y Eliminar) de los docentes.
+    ' Clase que administra las operaciones CRUD
+    ' de los docentes en memoria.
     Public Class GestorDocente
 
-        ' Lista privada que almacena temporalmente
-        ' todos los docentes registrados en memoria.
-        '
-        ' ReadOnly indica que la referencia de la lista
-        ' no puede cambiar después de inicializarse.
+        ' Lista donde se almacenan los docentes.
         Private ReadOnly listaDocentes As List(Of Docente)
 
         ' Constructor de la clase.
-        '
-        ' Se ejecuta automáticamente al crear un objeto
-        ' de tipo GestorDocente.
         Public Sub New()
 
-            ' Inicializa la lista vacía de docentes.
             listaDocentes = New List(Of Docente)
 
         End Sub
 
         ' ==================================================
-        ' MÉTODO: AgregarDocente
-        ' FUNCIÓN:
-        ' Registra un nuevo docente en el sistema.
+        ' CREAR DOCENTE
         ' ==================================================
         Public Sub AgregarDocente(docente As Docente)
 
-            ' Valida que el objeto docente no sea nulo.
             If docente Is Nothing Then
                 Throw New Exception("El docente no puede ser nulo.")
             End If
 
-            ' Valida que la identificación tenga contenido.
             If String.IsNullOrWhiteSpace(docente.Identificacion) Then
                 Throw New Exception("La identificación es obligatoria.")
             End If
 
-            ' Valida que el nombre tenga contenido.
             If String.IsNullOrWhiteSpace(docente.Nombre) Then
                 Throw New Exception("El nombre es obligatorio.")
             End If
 
-            ' Busca si ya existe un docente con la misma identificación.
-            '
-            ' Any() retorna True si encuentra al menos
-            ' un elemento que cumpla la condición.
-            Dim existe = listaDocentes.Any(Function(d) d.Identificacion = docente.Identificacion)
+            ' Verifica si ya existe un docente
+            ' con la misma identificación.
+            Dim existe = listaDocentes.Any(
+                Function(d) d.Identificacion = docente.Identificacion
+            )
 
-            ' Si ya existe un docente con la misma identificación,
-            ' se genera una excepción para evitar duplicados.
             If existe Then
                 Throw New Exception("Ya existe un docente con esa identificación.")
             End If
 
-            ' Agrega el nuevo docente a la lista.
             listaDocentes.Add(docente)
 
         End Sub
 
         ' ==================================================
-        ' MÉTODO: ObtenerDocentes
-        ' FUNCIÓN:
-        ' Retorna la lista completa de docentes registrados.
+        ' LEER TODOS LOS DOCENTES
         ' ==================================================
         Public Function ObtenerDocentes() As List(Of Docente)
 
-            ' Devuelve todos los docentes almacenados.
             Return listaDocentes
 
         End Function
 
         ' ==================================================
-        ' MÉTODO: ObtenerDocentePorId
-        ' FUNCIÓN:
-        ' Busca y retorna un docente usando su ID.
+        ' LEER DOCENTE POR IDENTIFICACIÓN
         ' ==================================================
-        Public Function ObtenerDocentePorId(id As Integer) As Docente
+        Public Function ObtenerDocentePorIdentificacion(
+            identificacion As String
+        ) As Docente
 
-            ' FirstOrDefault busca el primer elemento
-            ' que cumpla la condición especificada.
-            '
-            ' Si no encuentra coincidencias,
-            ' retorna Nothing.
-            Return listaDocentes.FirstOrDefault(Function(d) d.Id = id)
+            If String.IsNullOrWhiteSpace(identificacion) Then
+                Throw New Exception("La identificación es obligatoria.")
+            End If
 
-        End Function
+            Dim docente = listaDocentes.FirstOrDefault(
+                Function(d) d.Identificacion = identificacion
+            )
 
-        ' ==================================================
-        ' MÉTODO: ActualizarDocente
-        ' FUNCIÓN:
-        ' Modifica la información de un docente existente.
-        ' ==================================================
-        Public Sub ActualizarDocente(docenteActualizado As Docente)
-
-            ' Busca el docente original usando el ID.
-            Dim docente = ObtenerDocentePorId(docenteActualizado.Id)
-
-            ' Verifica que el docente exista.
             If docente Is Nothing Then
                 Throw New Exception("Docente no encontrado.")
             End If
 
-            ' Actualiza los datos del docente.
-            docente.Identificacion = docenteActualizado.Identificacion
+            Return docente
+
+        End Function
+
+        ' ==================================================
+        ' ACTUALIZAR DOCENTE
+        ' ==================================================
+        Public Sub ActualizarDocente(docenteActualizado As Docente)
+
+            If docenteActualizado Is Nothing Then
+                Throw New Exception("El docente no puede ser nulo.")
+            End If
+
+            Dim docente = listaDocentes.FirstOrDefault(
+                Function(d) d.Id = docenteActualizado.Id
+            )
+
+            If docente Is Nothing Then
+                Throw New Exception("Docente no encontrado.")
+            End If
+
             docente.Nombre = docenteActualizado.Nombre
+            docente.Identificacion = docenteActualizado.Identificacion
             docente.Estado = docenteActualizado.Estado
 
         End Sub
 
         ' ==================================================
-        ' MÉTODO: EliminarDocente
-        ' FUNCIÓN:
-        ' Elimina un docente de la lista.
+        ' ELIMINAR DOCENTE
         ' ==================================================
         Public Sub EliminarDocente(id As Integer)
 
-            ' Busca el docente usando el ID recibido.
-            Dim docente = ObtenerDocentePorId(id)
+            Dim docente = listaDocentes.FirstOrDefault(
+                Function(d) d.Id = id
+            )
 
-            ' Verifica que el docente exista.
             If docente Is Nothing Then
                 Throw New Exception("Docente no encontrado.")
             End If
 
-            ' Elimina el docente de la lista.
+            ' Validación:
+            ' Solo se puede eliminar si está inactivo.
+            If docente.Estado = True Then
+                Throw New Exception(
+                    "No se puede eliminar un docente activo."
+                )
+            End If
+
             listaDocentes.Remove(docente)
 
         End Sub

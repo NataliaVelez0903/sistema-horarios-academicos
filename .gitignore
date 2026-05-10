@@ -75,3 +75,6 @@ Desktop.ini
 *.temp
 *.log
 *.cache
+
+# Docker
+mysql_data/
